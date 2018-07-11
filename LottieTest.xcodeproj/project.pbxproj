@@ -13,6 +13,7 @@
 		C55B2F6220F5C8BD007D3A2F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C55B2F6120F5C8BD007D3A2F /* Assets.xcassets */; };
 		C55B2F6520F5C8BD007D3A2F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C55B2F6320F5C8BD007D3A2F /* LaunchScreen.storyboard */; };
 		C55B2F7020F5C8BD007D3A2F /* LottieTestUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C55B2F6F20F5C8BD007D3A2F /* LottieTestUITests.swift */; };
+		C55B2F7C20F5D532007D3A2F /* Lottie.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C55B2F7B20F5D532007D3A2F /* Lottie.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +37,7 @@
 		C55B2F6B20F5C8BD007D3A2F /* LottieTestUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LottieTestUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C55B2F6F20F5C8BD007D3A2F /* LottieTestUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LottieTestUITests.swift; sourceTree = "<group>"; };
 		C55B2F7120F5C8BD007D3A2F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C55B2F7B20F5D532007D3A2F /* Lottie.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Lottie.framework; path = Carthage/Build/iOS/Lottie.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +45,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C55B2F7C20F5D532007D3A2F /* Lottie.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -62,6 +65,7 @@
 				C55B2F5920F5C8BB007D3A2F /* LottieTest */,
 				C55B2F6E20F5C8BD007D3A2F /* LottieTestUITests */,
 				C55B2F5820F5C8BB007D3A2F /* Products */,
+				C55B2F7A20F5D531007D3A2F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -96,6 +100,14 @@
 			path = LottieTestUITests;
 			sourceTree = "<group>";
 		};
+		C55B2F7A20F5D531007D3A2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C55B2F7B20F5D532007D3A2F /* Lottie.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,6 +118,7 @@
 				C55B2F5320F5C8BB007D3A2F /* Sources */,
 				C55B2F5420F5C8BB007D3A2F /* Frameworks */,
 				C55B2F5520F5C8BB007D3A2F /* Resources */,
+				C55B2F7D20F5DAD9007D3A2F /* Carthage Script */,
 			);
 			buildRules = (
 			);
@@ -191,6 +204,24 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		C55B2F7D20F5DAD9007D3A2F /* Carthage Script */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Lottie.framework",
+			);
+			name = "Carthage Script";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C55B2F5320F5C8BB007D3A2F /* Sources */ = {
@@ -360,7 +391,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DHY6ZSRL6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LottieTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -378,7 +414,12 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = DHY6ZSRL6G;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = LottieTest/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
